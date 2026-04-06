@@ -1,8 +1,9 @@
-""" Copyright start
-  Copyright (C) 2008 - 2025 Fortinet Inc.
-  All rights reserved.
-  FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
-  Copyright end """
+"""
+Copyright start
+MIT License
+Copyright (c) 2026 Fortinet Inc
+Copyright end
+"""
 
 import json
 from datetime import datetime
@@ -21,7 +22,6 @@ class Netskope:
         self.base_url = self.base_url + "/api/v2"
         self.api_token = config['api_token']
         self.verify_ssl = config['verify_ssl']
-
 
     def make_rest_call(self, endpoint, method="GET", params=None, data=None, json_data=None):
         headers = {'Netskope-Api-Token': self.api_token}
@@ -158,6 +158,7 @@ def create_url_list(config, params):
     response = ob.make_rest_call("/policy/urllist", "POST", data=json.dumps(data))
     return response
 
+
 def apply_url_list(config, params):
     ob = Netskope(config)
     endpoint = "/policy/urllist/deploy"
@@ -245,7 +246,7 @@ def send_custom_request(config, params):
         else:
             payload = None
         response = ob.make_rest_call(endpoint=endpoint, method=http_method, params=query_params,
-                                     data=json.dumps(payload), json_data=data)
+                                     data=json.dumps(payload), json_data=payload)
         return response
     except Exception as err:
         raise ConnectorError(str(err))
