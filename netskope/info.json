@@ -10,7 +10,7 @@
   "category": "Network Security",
   "icon_large_name": "large.png",
   "icon_small_name": "small.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/2.1.0/netskope/210/netskope-v2-1-0",
   "ingestion_supported": false,
   "configuration": {
     "fields": [
@@ -406,7 +406,7 @@
       "title": "Apply Pending URL Changes",
       "annotation": "apply_url_list",
       "category": "investigation",
-      "description": "Applies all pending URL list changes that have been staged, making them active in your tenant.",
+      "description": "Applies all staged URL list changes and makes them active in your tenant.",
       "enabled": true,
       "output_schema": {},
       "parameters": []

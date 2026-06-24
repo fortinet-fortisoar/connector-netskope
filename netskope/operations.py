@@ -89,16 +89,16 @@ def convert_datetime_to_epoch(date_time):
 def get_alerts_list(config, params):
     ob = Netskope(config)
     start_time = params.get("starttime")
-    if start_time:
+    if start_time and 'T' in str(start_time):
         start_time = convert_datetime_to_epoch(start_time)
     end_time = params.get("endtime")
-    if end_time:
+    if end_time and 'T' in str(end_time):
         end_time = convert_datetime_to_epoch(end_time)
     insertion_start_time = params.get("insertionstarttime")
-    if insertion_start_time:
+    if insertion_start_time and 'T' in str(insertion_start_time):
         insertion_start_time = convert_datetime_to_epoch(insertion_start_time)
     insertion_end_time = params.get("insertionendtime")
-    if insertion_end_time:
+    if insertion_end_time and 'T' in str(insertion_end_time):
         insertion_end_time = convert_datetime_to_epoch(insertion_end_time)
     payload = {
         "query": params.get("query"),
@@ -120,16 +120,16 @@ def get_events_list(config, params):
     ob = Netskope(config)
     endpoint = "/events/data/{0}".format(params.get('type').lower())
     start_time = params.get("starttime")
-    if start_time:
+    if start_time and 'T' in str(start_time):
         start_time = convert_datetime_to_epoch(start_time)
     end_time = params.get("endtime")
-    if end_time:
+    if end_time and 'T' in str(end_time):
         end_time = convert_datetime_to_epoch(end_time)
     insertion_start_time = params.get("insertionstarttime")
-    if insertion_start_time:
+    if insertion_start_time and 'T' in str(insertion_start_time):
         insertion_start_time = convert_datetime_to_epoch(insertion_start_time)
     insertion_end_time = params.get("insertionendtime")
-    if insertion_end_time:
+    if insertion_end_time and 'T' in str(insertion_end_time):
         insertion_end_time = convert_datetime_to_epoch(insertion_end_time)
     payload = {
         "query": params.get("query"),
